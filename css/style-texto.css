@@ -1,0 +1,88 @@
+/* css/style-texto.css */
+
+/* Estilo geral para páginas de textos (contos, livros, etc.) */
+body {
+    background-color: white; /* Fundo branco */
+    color: #111; /* Texto quase preto para boa leitura */
+    font-family: "Georgia", serif; /* Fonte serifada clássica e legível */
+    max-width: 800px; /* Largura confortável, tipo A4 */
+    margin: 50px auto; /* Centraliza a página horizontalmente e dá espaçamento vertical */
+    padding: 40px 30px; /* Espaçamento interno confortável */
+    line-height: 1.6; /* Espaço entre linhas para facilitar a leitura */
+    text-align: justify; /* Justifica o texto para um visual mais formal */
+}
+
+/* Estilo para títulos principais */
+h1 {
+    font-size: 3em; /* Tamanho grande para destaque */
+    color: black;
+    text-align: center; /* Centraliza o título */
+    margin-bottom: 40px; /* Espaço abaixo do título */
+    font-family: "Georgia", serif;
+    cursor: pointer; /* Cursor indica interatividade */
+    transition: color 0.3s ease; /* Transição suave para mudança de cor */
+}
+
+/* Efeito hover para o título */
+h1:hover {
+    color: #660000; /* Vermelho sangue elegante */
+}
+
+/* Estilo dos parágrafos */
+p {
+    font-size: 1.15em; /* Tamanho confortável para leitura */
+    margin: 20px 0; /* Espaço vertical entre parágrafos */
+}
+
+/* Estilo para texto em itálico */
+em {
+    font-style: italic;
+    color: #660000; /* Vermelho para destacar texto em itálico */
+}
+
+/* Estilo do botão voltar fixo no canto superior esquerdo */
+.btn-voltar {
+    position: fixed; /* Fica fixo na tela mesmo com rolagem */
+    top: 20px;
+    left: 20px;
+    background-color: #660000; /* Fundo vermelho escuro */
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none; /* Remove sublinhado */
+    border-radius: 6px; /* Bordas arredondadas */
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    z-index: 1000; /* Garante que fique acima de outros elementos */
+}
+
+/* Efeito hover para o botão voltar */
+.btn-voltar:hover {
+    background-color: #990000; /* Vermelho mais claro ao passar mouse */
+}
+
+/* Lista de índice estilizada */
+.index-list {
+    list-style: none; /* Remove marcadores padrão */
+    padding: 0;
+    margin-top: 2rem; /* Espaço acima */
+    display: flex;
+    flex-direction: column; /* Empilha verticalmente */
+    gap: 1rem; /* Espaçamento entre itens */
+}
+
+/* Links da lista de índice */
+.index-list li a {
+    text-decoration: none;
+    font-size: 1.4rem;
+    color: #660000; /* Vermelho bordô */
+    border-bottom: 2px solid transparent; /* Linha inferior invisível */
+    transition: border-color 0.3s ease, color 0.3s ease;
+}
+
+/* Efeito hover e foco para links da lista */
+.index-list li a:hover,
+.index-list li a:focus {
+    color: #000; /* Preto para melhor contraste ao passar mouse */
+    border-bottom-color: #660000; /* Linha inferior vermelha aparece */
+    outline: none; /* Remove outline padrão */
+}

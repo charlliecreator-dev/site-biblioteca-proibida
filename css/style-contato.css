@@ -1,0 +1,126 @@
+/* Importa a fonte Playfair Display com peso 700 do Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap");
+
+/* Estilo geral do corpo da página */
+body {
+    background-color: #000; /* Fundo preto */
+    color: #eee; /* Texto cinza claro */
+    font-family: "Playfair Display", serif; /* Fonte serifada elegante */
+    padding: 50px 20px 120px; /* Espaçamento inferior maior para rodapé fixo */
+    text-align: center;
+    position: relative;
+    min-height: 100vh;
+}
+
+/* Botão de voltar fixo no topo esquerdo */
+.btn-voltar {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: #660000;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn-voltar:hover {
+    background-color: #990000;
+}
+
+/* Título principal da página */
+h2 {
+    font-size: 3em;
+    margin-bottom: 40px;
+    text-shadow: 0 0 12px #660000;
+}
+
+/* Formulário */
+form {
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+/* Labels */
+label {
+    display: block;
+    margin-top: 20px;
+    font-weight: bold;
+    color: #ddd;
+}
+
+/* Inputs e textarea */
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 12px 15px;
+    margin-top: 8px;
+    border: 2px solid #660000; /* borda vermelha */
+    border-radius: 8px;
+    background-color: #111;
+    color: #eee;
+    font-family: "Playfair Display", serif;
+    font-size: 1em;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Foco nos inputs e textarea */
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+    outline: none;
+    border-color: #990000;
+    box-shadow: 0 0 8px #990000aa;
+}
+
+/* Botão enviar */
+button[type="submit"] {
+    margin-top: 30px;
+    padding: 12px 25px;
+    background-color: #660000;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+button[type="submit"]:hover:not(:disabled) {
+    background-color: #990000;
+}
+
+button[type="submit"]:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Mensagem de resposta */
+#resposta {
+    margin-top: 20px;
+    font-weight: bold;
+    min-height: 1.5em;
+}
+
+/* Rodapé fixo para dados pessoais */
+.dados-pessoais {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #110000;
+    color: #aa4444;
+    font-family: "Playfair Display", serif;
+    font-size: 0.9em;
+    padding: 15px 20px;
+    text-align: center;
+    box-shadow: 0 -3px 10px #660000bb;
+    border-top: 2px solid #660000;
+    z-index: 1000;
+}

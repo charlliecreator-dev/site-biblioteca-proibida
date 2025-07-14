@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" /> <!-- Codificação UTF-8 para acentuação -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- Responsividade -->
+  <title>Contato | Biblioteca Proibida</title>
+
+  <!-- Link para o CSS externo -->
+  <link rel="stylesheet" href="css/style-contato.css" />
+</head>
+<body>
+
+  <!-- Botão para voltar à página inicial -->
+  <a href="index.html" class="btn-voltar">Voltar ao Início</a>
+
+  <!-- Conteúdo principal da página -->
+  <main class="container">
+    <!-- Título do formulário -->
+    <h2>Fale Conosco</h2>
+
+    <!-- Formulário de contato com id para JS -->
+    <form id="contatoForm" novalidate>
+      <label for="nome">Nome:</label><br />
+      <input type="text" id="nome" name="nome" required /><br />
+
+      <label for="email">E-mail:</label><br />
+      <input type="email" id="email" name="email" required /><br />
+
+      <label for="mensagem">Mensagem:</label><br />
+      <textarea id="mensagem" name="mensagem" rows="5" required></textarea><br />
+
+      <button type="submit" id="enviarBtn">Enviar</button>
+    </form>
+
+    <!-- Parágrafo para mensagens de erro ou sucesso -->
+    <p id="resposta"></p>
+
+    <!-- Dados pessoais discretos -->
+    <section class="dados-pessoais" aria-label="Informações pessoais do autor">
+      <p><strong>CHARIZE APª PEREIRA</strong></p>
+      <p>R.A.: 24189813-5</p>
+      <p>Curso: Bacharelado em Engenharia de Software</p>
+      <p>Disciplina: Programação Front-End</p>
+    </section>
+  </main>
+
+  <!-- Script JS para validação e mensagem -->
+  <script>
+    document.getElementById("contatoForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const nome = document.getElementById("nome").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const mensagem = document.getElementById("mensagem").value.trim();
+      const resposta = document.getElementById("resposta");
+      const btn = document.getElementById("enviarBtn");
+
+      if (!nome || !email || !mensagem) {
+        resposta.textContent = "Por favor, preencha todos os campos.";
+        resposta.style.color = "#ff4444";
+        return;
+      }
+
+      btn.disabled = true;
+      btn.textContent = "Enviando...";
+
+      setTimeout(() => {
+        resposta.textContent = "Mensagem enviada com sucesso!";
+        resposta.style.color = "#99ff99";
+
+        btn.disabled = false;
+        btn.textContent = "Enviar";
+
+        this.reset();
+      }, 1500);
+    });
+  </script>
+
+</body>
+</html>

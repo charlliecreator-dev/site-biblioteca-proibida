@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Biblioteca Proibida - Abertura</title>
+
+  <!-- Link para o CSS externo -->
+  <link rel="stylesheet" href="css/style-abertura.css">
+</head>
+<body>
+
+  <!-- Primeira tela de boas-vindas -->
+  <div id="container">
+    <div id="welcomeText">Seja bem vindo à Biblioteca Secreta</div>
+    <div id="continueQuestion">Deseja continuar?</div>
+    <div id="buttons">
+      <button id="btnYes">Sim</button>
+      <button id="btnNo">Não</button>
+    </div>
+  </div>
+
+  <!-- Segunda tela da Biblioteca Proibida -->
+  <div id="libraryPage" style="display:none;">
+    <div id="libraryTitle">Biblioteca Proibida</div>
+    <div id="libraryWelcome">
+      Bem-vindo(a)<br>
+      Entre pelas portas silenciosas da Biblioteca Proibida. Aqui vivem histórias esquecidas, ecos do passado e encantos de outros mundos. Leia, se ousar.
+    </div>
+    <div id="followQuestion">Está preparado para seguir em frente?</div>
+    <div id="buttons2">
+      <button id="btnYes2">Sim</button>
+      <button id="btnNo2">Não</button>
+    </div>
+    <div id="noMessage"></div>
+  </div>
+
+  <!-- Tela de transição com a mensagem -->
+  <div id="messageOverlay" style="display:none;">Vamos lá...</div>
+
+  <!-- Script JS -->
+  <script src="js/script-abertura.js"></script>
+
+</body>
+</html>

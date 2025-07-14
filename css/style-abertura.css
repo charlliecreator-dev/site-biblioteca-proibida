@@ -1,0 +1,165 @@
+/* Importa a fonte 'Playfair Display' do Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap");
+
+/* Reset básico e estilo geral do html e body */
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%; /* Ocupa toda a altura da tela */
+    background-color: black; /* Fundo preto */
+    font-family: "Playfair Display", serif; /* Fonte serifada estilosa */
+    color: #eee; /* Cor clara para o texto */
+    overflow: hidden; /* Remove barra de rolagem */
+
+    /* Centraliza todo conteúdo vertical e horizontalmente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Container principal da tela inicial */
+#container {
+    text-align: center; /* Centraliza texto */
+    max-width: 600px; /* Limita largura máxima */
+    padding: 20px;
+    opacity: 0; /* Inicialmente invisível para efeito fade-in */
+    transition: opacity 2s ease; /* Transição suave de opacidade */
+}
+
+/* Classe para mostrar elemento com fade-in */
+.fade-in {
+    opacity: 1 !important;
+}
+
+/* Texto de boas-vindas */
+#welcomeText {
+    font-size: 3em; /* Texto grande */
+    margin-bottom: 30px;
+    user-select: none; /* Impede seleção de texto */
+}
+
+/* Texto da pergunta "Deseja continuar?" */
+#continueQuestion {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    user-select: none;
+    opacity: 0; /* Inicialmente invisível, vai aparecer com transição */
+    transition: opacity 1.5s ease;
+}
+
+/* Contêiner dos botões da primeira e segunda tela */
+#buttons,
+#buttons2 {
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente os botões */
+    gap: 25px; /* Espaço entre os botões */
+    margin-top: 20px;
+    opacity: 0; /* Inicialmente invisível */
+    transition: opacity 1s ease;
+}
+
+/* Estilo geral para todos os botões */
+button {
+    background-color: black;
+    color: #660000; /* Cor bordô */
+    border: 2px solid #660000;
+    padding: 10px 30px;
+    font-size: 1.1em;
+    cursor: pointer; /* Muda cursor para indicar clicável */
+    border-radius: 6px; /* Cantos arredondados */
+    user-select: none;
+    transition: background-color 0.4s ease, color 0.4s ease; /* Transições para hover */
+}
+
+/* Efeito hover para botões */
+button:hover {
+    background-color: #660000; /* Fundo bordô */
+    color: black; /* Texto preto */
+    border-color: black; /* Borda preta */
+}
+
+/* Segunda tela da biblioteca, inicialmente oculta */
+#libraryPage {
+    display: none; /* Oculta */
+    flex-direction: column; /* Itens empilhados */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    max-width: 600px;
+    background: url("../imagens/capa.jpg") no-repeat center center/cover; /* Imagem de fundo */
+    animation: fadeInBackground 2s ease forwards; /* Animação fade-in */
+}
+
+/* Animação para aparecer o background */
+@keyframes fadeInBackground {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Título da biblioteca */
+#libraryTitle {
+    font-size: 3em;
+    letter-spacing: 8px; /* Espaço entre letras */
+    color: #eee;
+    margin-bottom: 15px;
+    cursor: pointer;
+    user-select: none;
+    transition: color 0.4s ease;
+}
+
+/* Cor do título ao passar o mouse */
+#libraryTitle:hover {
+    color: #660000;
+}
+
+/* Texto de boas-vindas da segunda tela */
+#libraryWelcome {
+    font-size: 18px;
+    font-weight: 300; /* Fonte fina */
+    line-height: 1.6; /* Espaçamento entre linhas */
+    margin-bottom: 40px;
+    color: #ddd;
+    user-select: none;
+}
+
+/* Pergunta na segunda tela */
+#followQuestion {
+    font-size: 1.3em;
+    margin-bottom: 15px;
+    user-select: none;
+}
+
+/* Sobreposição para mensagens (ex: "Vamos lá...") */
+#messageOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: black;
+    color: #eee;
+    font-size: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    opacity: 0; /* Invisível inicialmente */
+    pointer-events: none; /* Não interage com mouse quando invisível */
+    transition: opacity 1.8s ease;
+    padding: 20px;
+    z-index: 100; /* Fica acima de outros elementos */
+}
+
+/* Mensagem de aviso na segunda tela */
+#noMessage {
+    margin-top: 30px;
+    color: #ccc;
+    font-style: italic;
+    user-select: none;
+}

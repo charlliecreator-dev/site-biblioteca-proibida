@@ -1,0 +1,82 @@
+/* Importa a fonte Playfair Display com peso 700 do Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap");
+
+/* Estilo geral do corpo da página */
+body {
+    background-color: #000; /* Fundo preto */
+    color: #eee; /* Texto cinza claro */
+    font-family: "Playfair Display", serif; /* Fonte serifada elegante */
+    padding: 50px 20px; /* Espaçamento interno: 50px topo/baixo e 20px laterais */
+    text-align: center; /* Centraliza texto */
+}
+
+/* Estilo do título principal (h1) */
+h1 {
+    font-size: 3em; /* Tamanho grande para destaque */
+    margin-bottom: 40px; /* Espaço abaixo do título */
+    text-shadow: 0 0 12px #660000; /* Sombra vermelha ao redor do texto */
+}
+
+/* Botão de voltar fixo no topo esquerdo */
+.btn-voltar {
+    position: absolute; /* Posiciona fora do fluxo normal */
+    top: 20px; /* 20px do topo da página */
+    left: 20px; /* 20px da esquerda */
+    background-color: #660000; /* Fundo vermelho escuro */
+    color: white; /* Texto branco */
+    padding: 10px 20px; /* Espaçamento interno */
+    text-decoration: none; /* Remove sublinhado */
+    border-radius: 6px; /* Bordas arredondadas */
+    font-weight: bold; /* Texto em negrito */
+    transition: background-color 0.3s ease; /* Transição suave na cor do fundo */
+}
+
+/* Efeito hover do botão voltar */
+.btn-voltar:hover {
+    background-color: #990000; /* Fundo vermelho mais claro */
+}
+
+/* Container flexível para os cards (livros ou contos) */
+.grid-cards {
+    display: flex; /* Usar flexbox */
+    flex-wrap: wrap; /* Permite quebrar linha para os cards */
+    justify-content: center; /* Centraliza horizontalmente os cards */
+    gap: 40px; /* Espaço entre os cards */
+}
+
+/* Estilo base para cada card */
+.card-item {
+    background-color: #111; /* Fundo escuro */
+    padding: 20px; /* Espaçamento interno */
+    border-radius: 10px; /* Bordas arredondadas */
+    width: 250px; /* Largura fixa */
+    box-shadow: 0 0 10px #66000066; /* Sombra vermelha suave */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transição suave para transform e sombra */
+}
+
+/* Efeito hover do card */
+.card-item:hover {
+    transform: translateY(-5px); /* Eleva o card 5px para cima */
+    box-shadow: 0 0 20px #660000aa; /* Sombra mais forte */
+}
+
+/* Imagem dentro do card */
+.card-item img {
+    width: 100%; /* Ocupa toda largura do card */
+    border-radius: 6px; /* Bordas arredondadas */
+    margin-bottom: 15px; /* Espaço abaixo da imagem */
+}
+
+/* Título/link do card */
+.card-title {
+    font-size: 1.2em; /* Tamanho da fonte */
+    color: #ddd; /* Cor clara */
+    text-decoration: none; /* Sem sublinhado */
+    display: block; /* Exibe como bloco (ocupa linha inteira) */
+    transition: color 0.3s ease; /* Transição suave na cor */
+}
+
+/* Cor do título ao passar mouse */
+.card-title:hover {
+    color: #ff4444; /* Vermelho claro */
+}

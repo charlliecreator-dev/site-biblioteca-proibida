@@ -1,0 +1,195 @@
+/* Reset básico para todos os elementos */
+/* Garante que padding e bordas estejam inclusos nas dimensões e remove margens/paddings padrão */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilo geral do corpo da página */
+body {
+    background-color: #000; /* Fundo preto */
+    color: white; /* Texto branco */
+    font-family: "Playfair Display", serif; /* Fonte serifada elegante */
+    overflow-x: hidden; /* Evita barra de rolagem horizontal */
+}
+
+/* Cabeçalho fixo no topo */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px 40px;
+    background: rgba(0, 0, 0, 0.8); /* Transparência */
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* Título no header */
+header h1 {
+    font-size: 1.8em;
+    letter-spacing: 2px;
+    color: #b30000; /* Vermelho escuro */
+}
+
+/* Botão hamburguer para menu mobile */
+.menu-toggle {
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: #b30000;
+    cursor: pointer;
+    display: none; /* Escondido em desktop */
+}
+
+/* Menu de navegação no desktop */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #b30000;
+}
+
+/* Estilos para telas pequenas (mobile) */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block; /* Mostra o botão hamburguer */
+    }
+
+    nav ul {
+        position: absolute;
+        top: 70px; /* Distância do topo do header */
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: rgba(0, 0, 0, 0.9);
+        padding: 10px 20px;
+        border-radius: 8px;
+        display: none; /* Oculto até ativar */
+        flex-direction: row; /* Itens lado a lado */
+        gap: 1rem;
+        z-index: 999;
+    }
+
+    nav ul.active {
+        display: flex; /* Exibe menu quando ativo */
+    }
+
+    nav ul li {
+        padding: 0;
+    }
+}
+
+/* Seção hero/banner principal */
+.hero {
+    height: 90vh;
+    background: url("../imagens/capa3.jpg") no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    padding-left: 50px;
+    padding-top: 100px;
+}
+
+/* Texto dentro da hero */
+.hero-text {
+    max-width: 600px;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 30px;
+    border-left: 5px solid #b30000;
+}
+
+.hero-text h2 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.hero-text p {
+    font-size: 1.2em;
+    line-height: 1.5;
+}
+
+/* Seções gerais da página */
+.secao {
+    padding: 40px 30px;
+}
+
+.secao h3 {
+    margin-bottom: 20px;
+    font-size: 1.5em;
+}
+
+/* Container para carrossel horizontal */
+.carrossel {
+    display: flex;
+    overflow-x: auto;
+    gap: 15px;
+    padding-bottom: 10px;
+    scroll-behavior: smooth; /* Rola suavemente */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE e Edge antigos */
+}
+
+.carrossel::-webkit-scrollbar {
+    display: none; /* Chrome/Safari */
+}
+
+/* Cards para livros e contos */
+.livro,
+.conto {
+    min-width: 180px;
+    background-color: #111;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 10px #66000066;
+    will-change: transform; /* Performance */
+}
+
+.livro:hover,
+.conto:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #b30000aa;
+}
+
+/* Imagens dentro dos cards */
+.livro img,
+.conto img {
+    width: 100%;
+    display: block;
+    border-bottom: 1px solid #660000;
+}
+
+/* Texto dentro dos cards */
+.livro p,
+.conto p,
+.livro span,
+.conto span {
+    padding: 10px;
+    font-size: 0.95em;
+    color: #eee;
+    text-align: center;
+}
+
+/* Rodapé */
+footer {
+    background-color: #111;
+    color: #666;
+    padding: 30px;
+    text-align: center;
+    font-size: 0.9em;
+    margin-top: 50px;
+}
